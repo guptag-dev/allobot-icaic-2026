@@ -235,7 +235,7 @@ body:hover #hud{opacity:.85}
 <section class="slide hashdr tight" data-title="Why this is hard" data-time="100">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
   <div class="kicker">Introduction · The problem</div>
-  <h1>Where care is most needed, people are <em>least likely to ask.</em></h1>
+  <h1>Stigma and gendered help-seeking delay sexual-health care</h1>
   <div class="body">
     <div class="row">
       <div class="card frag"><div class="ico">1</div><h3>Stigma delays care</h3><p>Contraception, STIs and sexual dysfunction are stigmatised. Anonymity and 24×7 availability are why people use chat agents, and they disclose more to them than to clinicians.</p></div>
@@ -262,8 +262,8 @@ body:hover #hud{opacity:.85}
 <!-- 4 WRAPPER -->
 <section class="slide hashdr" data-title="Isn't this just GPT with a prompt?" data-time="45">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Introduction · Contributions</div>
-  <h1>"Isn't this just GPT with a prompt?" <span class="c">No.</span></h1>
+  <div class="kicker">Introduction</div>
+  <h1>Contributions: more than a single prompt and model</h1>
   <div class="body">
     <div class="row" style="gap:50px;align-items:stretch">
       <div class="card" style="flex:.75">
@@ -301,8 +301,8 @@ body:hover #hud{opacity:.85}
 <!-- 4b RELATED WORK -->
 <section class="slide hashdr" data-title="Related work" data-time="30">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Related work</div>
-  <h1>Prior work had pieces. <em>Nobody had all three together.</em></h1>
+  <div class="kicker">Related Work</div>
+  <h1>Related work and the research gap</h1>
   <div class="body">
     <table class="t">
       <tr><th>Study</th><th>Design</th><th>Data</th><th>Principal finding</th></tr>
@@ -325,7 +325,7 @@ body:hover #hud{opacity:.85}
 <section class="slide hashdr" data-title="Architecture: 10 stages" data-time="75">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
   <div class="kicker">Methodology · Architecture</div>
-  <h1>Every message passes through <em>ten stages.</em></h1>
+  <h1>Every message passes through ten stages</h1>
   <div class="body" style="justify-content:flex-start;margin-top:46px">
     <div class="pipe">
       <div class="stg"><div class="n">01</div><div class="l">Ingress &amp; quota</div><div class="d">Daily + lifetime caps before any model call</div></div>
@@ -364,7 +364,7 @@ body:hover #hud{opacity:.85}
 <section class="slide hashdr" data-title="Tool gating by stage" data-time="60">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
   <div class="kicker">Methodology · Routing by patient journey</div>
-  <h1>A prompt is a request. <em>A tool gate is a guarantee.</em></h1>
+  <h1>Tool access is restricted by care-journey stage</h1>
   <div class="body" style="margin-top:26px">
     <table class="mx">
       <tr>
@@ -399,8 +399,8 @@ body:hover #hud{opacity:.85}
 <!-- 7 DESIGN BETS -->
 <section class="slide hashdr tight" data-title="Three design choices" data-time="75">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Methodology · Design choices</div>
-  <h1>Three choices, and <em>why we made them.</em></h1>
+  <div class="kicker">Methodology</div>
+  <h1>Three design choices: grounding, no translation layer, post-response safety</h1>
   <div class="body">
     <div class="row">
       <div class="card frag"><div class="ico" style="font-size:22px">RAG</div><h3>Ground it, don't generate it</h3>
@@ -426,8 +426,8 @@ body:hover #hud{opacity:.85}
 <!-- 8 METHOD -->
 <section class="slide hashdr" data-title="How we measured" data-time="45">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Methodology · Corpus &amp; evaluation</div>
-  <h1>Measured on <em>live traffic</em>, not a test set.</h1>
+  <div class="kicker">Methodology</div>
+  <h1>Corpus and evaluation on live production traffic</h1>
   <div class="body">
     <div class="row" style="gap:50px">
       <div class="card">
@@ -461,7 +461,7 @@ body:hover #hud{opacity:.85}
 <section class="slide hashdr" data-title="RQ1: care-pathway distribution" data-time="90">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
   <div class="kicker">Results · Finding 1 · RQ1</div>
-  <h1>Most users first arrive <em>before booking</em>; most conversations come from <em>patients on treatment</em>.</h1>
+  <h1>Most users first arrive before booking; most conversations come from patients on treatment</h1>
   <div class="rq"><b>RQ1</b> · Where on the care pathway do users sit?</div>
   <div class="body" style="margin-top:20px">
     <div class="row" style="gap:70px;align-items:center">
@@ -491,7 +491,7 @@ body:hover #hud{opacity:.85}
 <section class="slide hashdr" data-title="RQ2: reliability on live traffic" data-time="90">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
   <div class="kicker">Results · Finding 2 · RQ2</div>
-  <h1>Under <em>0.25%</em> failed on every measure, and the weak link is <span class="c">retrieval.</span></h1>
+  <h1>Failure rate below 0.25% on all three metrics; retrieval scores lowest</h1>
   <div class="rq"><b>RQ2</b> · How does a stage-routed, tool-gated agent hold up on live traffic?</div>
   <div class="body" style="margin-top:22px">
     <div class="row" style="gap:34px">
@@ -521,7 +521,7 @@ body:hover #hud{opacity:.85}
 <section class="slide hashdr" data-title="RQ3: gender and language" data-time="50">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
   <div class="kicker">Results · Finding 3 · RQ3</div>
-  <h1>Almost all men, yet <em>women engage just as much.</em></h1>
+  <h1>97.9% of conversations are from men; engagement does not differ by gender</h1>
   <div class="rq"><b>RQ3</b> · Does engagement differ by gender?</div>
   <div class="body" style="margin-top:24px">
     <div class="row" style="gap:56px;align-items:stretch">
@@ -559,8 +559,8 @@ body:hover #hud{opacity:.85}
 <!-- 12 LIMITS -->
 <section class="slide hashdr" data-title="What we did not prove, and next" data-time="50">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Discussion · Limitations &amp; next steps</div>
-  <h1>What this study <span class="c">does not</span> show, and <em>what we're doing next.</em></h1>
+  <div class="kicker">Discussion</div>
+  <h1>Limitations and next steps</h1>
   <div class="body">
     <div class="row" style="gap:44px">
       <div class="card" style="border-color:#EDC2B8">
@@ -595,7 +595,7 @@ body:hover #hud{opacity:.85}
 <section class="slide hashdr" data-title="Conclusion" data-time="15">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
   <div class="kicker">Conclusion</div>
-  <h1>Three things to take home.</h1>
+  <h1>Three things to take home</h1>
   <div class="body">
     <div style="display:flex;flex-direction:column;gap:34px">
       <div class="row" style="align-items:center;gap:36px"><div style="font-size:90px;font-weight:900;color:var(--teal);width:90px;flex:none;text-align:center">1</div><div style="font-size:42px;line-height:1.3"><b>Scope what the agent can do by where the user is,</b> <span style="color:var(--muted)">and enforce it in code, not in the prompt.</span></div></div>
