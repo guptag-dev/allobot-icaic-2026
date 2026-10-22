@@ -202,7 +202,7 @@ body:hover #hud{opacity:.85}
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
   <div class="row" style="flex:1;align-items:center;gap:80px">
     <div style="flex:1">
-      <div class="kicker">Six months of a live service</div>
+      <div class="kicker">Introduction · Six months of a live service</div>
       <div class="big num" style="color:var(--teal)">184,018</div>
       <h1 style="font-size:56px;margin-top:24px">conversations about the health problems people <em>won't say out loud.</em></h1>
       <div class="row" style="margin-top:46px;gap:56px">
@@ -232,7 +232,7 @@ body:hover #hud{opacity:.85}
 <!-- 3 WHY -->
 <section class="slide hashdr tight" data-title="Why this is hard" data-time="100">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">The problem</div>
+  <div class="kicker">Introduction · The problem</div>
   <h1>Where care is most needed, people are <em>least likely to ask.</em></h1>
   <div class="body">
     <div class="row">
@@ -260,7 +260,7 @@ body:hover #hud{opacity:.85}
 <!-- 4 WRAPPER -->
 <section class="slide hashdr" data-title="Isn't this just GPT with a prompt?" data-time="45">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">The question you're probably asking</div>
+  <div class="kicker">Introduction · Contributions</div>
   <h1>"Isn't this just GPT with a prompt?" <span class="c">No.</span></h1>
   <div class="body">
     <div class="row" style="gap:50px;align-items:stretch">
@@ -296,10 +296,33 @@ body:hover #hud{opacity:.85}
   </aside>
 </section>
 
+<!-- 4b RELATED WORK -->
+<section class="slide hashdr" data-title="Related work" data-time="30">
+  <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
+  <div class="kicker">Related work</div>
+  <h1>Prior work had pieces. <em>Nobody had all three together.</em></h1>
+  <div class="body">
+    <table class="t">
+      <tr><th>Study</th><th>Design</th><th>Data</th><th>Principal finding</th></tr>
+      <tr><td>Feng et al. 2026 [1]</td><td>Systematic review</td><td>20 LLM chatbot studies</td><td>Accurate but low readability; RCT gap</td></tr>
+      <tr><td>Mills et al. 2023 [4]</td><td>Realist synthesis</td><td>58 SRH sources</td><td>Anonymity and chunking drive engagement</td></tr>
+      <tr><td>Wang et al. 2022 [7]</td><td>Case study (SnehAI)</td><td>8.2M messages, India</td><td>Code-mixed Hinglish at scale; no clinic routing</td></tr>
+      <tr><td>Latt et al. 2025 [13]</td><td>Consensus study</td><td>195 SRH queries</td><td>Prompt-tuning lifts correctness 64.8 → 85.2%</td></tr>
+      <tr><td>Gumma et al. 2025 [15]</td><td>Benchmark</td><td>749 Indic queries</td><td>RAG models degrade on code-mixed input</td></tr>
+    </table>
+    <div class="callout" style="margin-top:28px;font-size:28px">Gap: <b>production-scale multilingual deployment</b> + <b>documented tool-augmented architecture</b> + <b>continuous evaluation on live traffic</b>, in one study.</div>
+  </div>
+  <div class="footer"><span><i class="flogo"></i>ICAIC 2026 · Paper 381</span><span class="pg"></span></div>
+  <aside class="notes">
+    <p><b>[0:30]</b> Don't read the table. "Prior work had pieces of this. Reviews find LLM chatbots accurate but rarely trialled. SnehAI showed Hinglish at scale in India, but with no clinic routing. Benchmarks show retrieval-based models get worse on code-mixed Indian text. Prompt tuning helps correctness, but hallucination remains."</p>
+    <p>"What nobody had in one place: a production-scale multilingual deployment, an architecture documented well enough to reproduce, and continuous evaluation on live traffic. That's the gap."</p>
+  </aside>
+</section>
+
 <!-- 5 ARCHITECTURE -->
 <section class="slide hashdr" data-title="Architecture: 10 stages" data-time="75">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Architecture</div>
+  <div class="kicker">Methodology · Architecture</div>
   <h1>Every message passes through <em>ten stages.</em></h1>
   <div class="body" style="justify-content:flex-start;margin-top:46px">
     <div class="pipe">
@@ -338,7 +361,7 @@ body:hover #hud{opacity:.85}
 <!-- 6 TOOL GATING -->
 <section class="slide hashdr" data-title="Tool gating by stage" data-time="60">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Routing by patient journey</div>
+  <div class="kicker">Methodology · Routing by patient journey</div>
   <h1>A prompt is a request. <em>A tool gate is a guarantee.</em></h1>
   <div class="body" style="margin-top:26px">
     <table class="mx">
@@ -374,7 +397,7 @@ body:hover #hud{opacity:.85}
 <!-- 7 DESIGN BETS -->
 <section class="slide hashdr tight" data-title="Three design choices" data-time="75">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Design choices</div>
+  <div class="kicker">Methodology · Design choices</div>
   <h1>Three choices, and <em>why we made them.</em></h1>
   <div class="body">
     <div class="row">
@@ -387,7 +410,7 @@ body:hover #hud{opacity:.85}
     </div>
     <div class="callout frag" style="margin-top:34px;font-size:28px"><b>Guardrails in every reply:</b> 40–60 words &nbsp;·&nbsp; never suggests a medicine (the doctor decides) &nbsp;·&nbsp; only facts from context &nbsp;·&nbsp; non-judgmental &nbsp;·&nbsp; user-led, never pushy</div>
   </div>
-  <div class="src">Ref [23] Lin et al., ToxicChat: toxicity in real user–AI conversations escapes single-input moderation</div>
+  <div class="src">Refs [16] Himel et al. 2024 (translation loses clinical nuance) · [23] Lin et al., ToxicChat (harm escapes single-input moderation)</div>
   <div class="footer"><span><i class="flogo"></i>ICAIC 2026 · Paper 381</span><span class="pg"></span></div>
   <aside class="notes">
     <p><b>[1:15]</b> Reveal one card at a time.</p>
@@ -401,7 +424,7 @@ body:hover #hud{opacity:.85}
 <!-- 8 METHOD -->
 <section class="slide hashdr" data-title="How we measured" data-time="45">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Corpus &amp; evaluation</div>
+  <div class="kicker">Methodology · Corpus &amp; evaluation</div>
   <h1>Measured on <em>live traffic</em>, not a test set.</h1>
   <div class="body">
     <div class="row" style="gap:50px">
@@ -435,7 +458,7 @@ body:hover #hud{opacity:.85}
 <!-- 9 RQ1 -->
 <section class="slide hashdr" data-title="RQ1: how you count flips the story" data-time="90">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Finding 1 · RQ1</div>
+  <div class="kicker">Results · Finding 1 · RQ1</div>
   <h1>Count people: it's a <em>front door.</em> Count conversations: it's <span class="c">continuing care.</span></h1>
   <div class="body" style="margin-top:20px">
     <div class="row" style="gap:70px;align-items:center">
@@ -464,7 +487,7 @@ body:hover #hud{opacity:.85}
 <!-- 10 RQ2 -->
 <section class="slide hashdr" data-title="RQ2: reliability on live traffic" data-time="90">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Finding 2 · RQ2</div>
+  <div class="kicker">Results · Finding 2 · RQ2</div>
   <h1>Under <em>0.25%</em> failed on every measure, and the weak link is <span class="c">retrieval.</span></h1>
   <div class="body" style="margin-top:22px">
     <div class="row" style="gap:34px">
@@ -493,7 +516,7 @@ body:hover #hud{opacity:.85}
 <!-- 11 RQ3 + language -->
 <section class="slide hashdr" data-title="RQ3: gender and language" data-time="50">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Finding 3 · RQ3</div>
+  <div class="kicker">Results · Finding 3 · RQ3</div>
   <h1>Almost all men, yet <em>women engage just as much.</em></h1>
   <div class="body" style="margin-top:24px">
     <div class="row" style="gap:56px;align-items:stretch">
@@ -531,7 +554,7 @@ body:hover #hud{opacity:.85}
 <!-- 12 LIMITS -->
 <section class="slide hashdr" data-title="What we did not prove, and next" data-time="50">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">Limitations &amp; next steps</div>
+  <div class="kicker">Discussion · Limitations &amp; next steps</div>
   <h1>What this study <span class="c">does not</span> show, and <em>what we're doing next.</em></h1>
   <div class="body">
     <div class="row" style="gap:44px">
@@ -564,9 +587,9 @@ body:hover #hud{opacity:.85}
 </section>
 
 <!-- 13 TAKEAWAYS -->
-<section class="slide hashdr" data-title="Three takeaways" data-time="30">
+<section class="slide hashdr" data-title="Conclusion" data-time="15">
   <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="kicker">If you build health AI</div>
+  <div class="kicker">Conclusion</div>
   <h1>Three things to take home.</h1>
   <div class="body">
     <div style="display:flex;flex-direction:column;gap:34px">
@@ -578,8 +601,20 @@ body:hover #hud{opacity:.85}
   <div class="footer"><span><i class="flogo"></i>ICAIC 2026 · Paper 381</span><span class="pg"></span></div>
   <aside class="notes">
     <p><b>[0:30]</b> "Three things to take home if you build health AI. Scope what the agent can do by where the user is, and enforce it in code. Evaluate continuously on live traffic, and be honest about what the judge can't see. And report by people and by conversations."</p>
-    <p>"Thank you." Pause. Go to the next slide.</p>
+    <p>"Thank you." Click past the References slide (don't speak to it) to the Thank-you slide.</p>
   </aside>
+</section>
+
+<!-- 13b REFERENCES -->
+<section class="slide hashdr" data-title="References" data-time="0">
+  <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
+  <div class="kicker">References</div>
+  <h1>Key references <span style="font-size:32px;color:var(--muted);font-weight:600">· full list of 25 in the paper</span></h1>
+  <div class="body" style="justify-content:flex-start;margin-top:22px">
+    <div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[1]</b><span>Feng, S., Li, X., Wake, A.N.: Engaging AI-based chatbots in digital health: a systematic review. PLOS Digit. Health 5(2) (2026)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[4]</b><span>Mills, R., et al.: Chatbots to improve sexual and reproductive health: realist synthesis. J. Med. Internet Res. 25, e46761 (2023)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[5]</b><span>Nadarzynski, T., et al.: Barriers and facilitators to engagement with AI chatbots for SRH advice. Sex. Health 18(5) (2021)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[7]</b><span>Wang, H., et al.: An AI chatbot for young people's SRH in India (SnehAI). J. Med. Internet Res. 24(1), e29969 (2022)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[8]</b><span>Addis, M.E., Mahalik, J.R.: Men, masculinity, and the contexts of help seeking. Am. Psychol. 58(1), 5–14 (2003)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[9]</b><span>Courtenay, W.H.: Constructions of masculinity and their influence on men's well-being. Soc. Sci. Med. 50(10) (2000)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[12]</b><span>Seidler, Z.E., et al.: The role of masculinity in men's help-seeking for depression. Clin. Psychol. Rev. 49 (2016)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[13]</b><span>Latt, P.M., et al.: Evaluation of AI chatbots for providing sexual health information. BMC Public Health 25, 1788 (2025)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[15]</b><span>Gumma, V., et al.: HEALTH-PARIKSHA: assessing RAG models for health chatbots in real-world multilingual settings (2025)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[16]</b><span>Himel, G.M.S., et al.: MedLingua: a conceptual framework for a multilingual medical conversational agent. MethodsX 12 (2024)</span></div><div style="display:grid;grid-template-columns:72px 1fr;gap:14px;font-size:22px;line-height:1.38;color:#24363C;padding:9px 0;border-bottom:1.5px solid #E4E8E6"><b style="color:var(--teal)">[23]</b><span>Lin, Z., et al.: ToxicChat: unveiling hidden challenges of toxicity detection in real-world user-AI conversation (2023)</span></div>
+  </div>
+  <div class="footer"><span><i class="flogo"></i>ICAIC 2026 · Paper 381</span><span class="pg"></span></div>
+  <aside class="notes"><p>Not spoken. Leave it up for a second, then click to Thank you.</p></aside>
 </section>
 
 <!-- 14 THANKS -->
@@ -745,26 +780,7 @@ body:hover #hud{opacity:.85}
   <aside class="notes"><p>Backup. Examples, not the full list per stage. If asked about escalation rate: not reported in the paper.</p></aside>
 </section>
 
-<!-- B6 -->
-<section class="slide hashdr" data-title="Backup: related work" data-time="0" data-backup="B6">
-  <div class="hdr"><i class="hl"></i><i class="hr"></i></div>
-  <div class="backup-badge">BACKUP B6</div>
-  <div class="kicker">Related work &amp; the gap</div>
-  <h1>Nobody had all three in one place.</h1>
-  <div class="body">
-    <table class="t">
-      <tr><th>Study</th><th>Design</th><th>Data</th><th>Principal finding</th></tr>
-      <tr><td>Feng et al. 2026 [1]</td><td>Systematic review</td><td>20 LLM chatbot studies</td><td>Accurate but low readability; RCT gap</td></tr>
-      <tr><td>Mills et al. 2023 [4]</td><td>Realist synthesis</td><td>58 SRH sources</td><td>Anonymity and chunking drive engagement</td></tr>
-      <tr><td>Wang et al. 2022 [7]</td><td>Case study (SnehAI)</td><td>8.2M messages, India</td><td>Code-mixed Hinglish at scale; no clinic routing</td></tr>
-      <tr><td>Latt et al. 2025 [13]</td><td>Consensus study</td><td>195 SRH queries</td><td>Prompt-tuning lifts correctness 64.8 → 85.2%</td></tr>
-      <tr><td>Gumma et al. 2025 [20]</td><td>Benchmark</td><td>749 Indic queries</td><td>RAG models degrade on code-mixed input</td></tr>
-    </table>
-    <div class="callout" style="margin-top:30px;font-size:28px">Gap: <b>production-scale multilingual deployment</b> + <b>documented tool-augmented architecture</b> + <b>continuous evaluation on live traffic</b>, together.</div>
-  </div>
-  <div class="footer"><span><i class="flogo"></i>ICAIC 2026 · Paper 381</span><span class="pg"></span></div>
-  <aside class="notes"><p>Backup. Use if asked "how is this different from SnehAI / prior work?"</p></aside>
-</section>
+
 
 </div></div>
 
